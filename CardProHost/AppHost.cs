@@ -11,7 +11,6 @@ namespace CardProHost {
 
         public AppHost()
            : base("CardProHost", typeof(CardProService).Assembly) {
-
         }
 
         public override void Configure(Container container) {
@@ -23,9 +22,14 @@ namespace CardProHost {
 
             Plugins.Add(new AuthFeature(() => new AuthUserSession(),
                 new IAuthProvider[] {
-                    new JwtAuthProvider(AppSettings) { AuthKey = AesUtils.CreateKey() }
+                    new JwtAuthProvider(AppSettings) {
+                        AuthKey = AesUtils.CreateKey(),
+                        RequireSecureConnection = false, //TODO: remove in production
+                        CreatePayloadFilter = FilterUtils.JWTPayloadFilter,
+                        EncryptPayload = true
+                    }
                 }
-                ));
+            ));
         }
     }
 }
