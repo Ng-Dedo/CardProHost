@@ -254,6 +254,11 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Libraries\ServiceStack.Client.dll" />
+    <Content Include="Libraries\ServiceStack.Common.dll" />
+    <Content Include="Libraries\ServiceStack.dll" />
+    <Content Include="Libraries\ServiceStack.Interfaces.dll" />
+    <Content Include="Libraries\ServiceStack.Text.dll" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Areas\HelpPage\Views\Web.config" />
