@@ -54,7 +54,7 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="ServiceStack, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\sacombankePayV2\branches\ServiceStack\bin\Debug\ServiceStack.dll</HintPath>
+      <HintPath>..\..\..\st-custom\ServiceStack.dll</HintPath>
     </Reference>
     <Reference Include="ServiceStack.Client, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
