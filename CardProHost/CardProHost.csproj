@@ -54,7 +54,7 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="ServiceStack, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\st-custom\ServiceStack.dll</HintPath>
+      <HintPath>..\..\..\sacombankePayV2\branches\ServiceStack\bin\Debug\ServiceStack.dll</HintPath>
     </Reference>
     <Reference Include="ServiceStack.Client, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -244,6 +244,7 @@
     <Compile Include="Results\ChallengeResult.cs" />
     <Compile Include="Services\CardProService.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="Utils\AesUtils.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />

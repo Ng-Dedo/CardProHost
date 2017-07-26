@@ -2,6 +2,8 @@
 using Funq;
 using CardProHost.Services;
 using log4net;
+using ServiceStack.Auth;
+using CardProHost.Utils;
 
 namespace CardProHost {
     public class AppHost : AppHostBase {
@@ -18,6 +20,12 @@ namespace CardProHost {
                 HandlerFactoryPath = "api",
                 WebHostUrl = AppSettings.GetString("HostAddress")
             });
+
+            Plugins.Add(new AuthFeature(() => new AuthUserSession(),
+                new IAuthProvider[] {
+                    new JwtAuthProvider(AppSettings) { AuthKey = AesUtils.CreateKey() }
+                }
+                ));
         }
     }
 }
