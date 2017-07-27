@@ -1,5 +1,6 @@
 ﻿using CardProHost.DTOs;
 using ServiceStack;
+using ServiceStack.Auth;
 
 namespace CardProHost.Services {
     public class CardProService : Service {
@@ -8,8 +9,10 @@ namespace CardProHost.Services {
         }   
 
         [Authenticate]
+        [RequiredPermission("CanRegister")]
         public object Post(CardRegister cardRegister) {
-            return new { result = $"{cardRegister.Name} - {cardRegister.Type}" };
+            IAuthSession session = GetSession();
+            return new { result = $"{session?.FirstName} - {cardRegister.Type}" };
         }
     }
 }

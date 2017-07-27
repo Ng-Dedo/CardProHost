@@ -4,6 +4,7 @@ using CardProHost.Services;
 using log4net;
 using ServiceStack.Auth;
 using CardProHost.Utils;
+using System;
 
 namespace CardProHost {
     public class AppHost : AppHostBase {
@@ -26,7 +27,8 @@ namespace CardProHost {
                         PrivateKey = RsaUtils.CreatePrivateKeyParams(RsaKeyLengths.Bit2048),
                         RequireSecureConnection = false, //TODO: remove in production
                         CreatePayloadFilter = FilterUtils.JWTPayloadFilter,
-                        EncryptPayload = true
+                        EncryptPayload = true,
+                        ExpireTokensIn = TimeSpan.FromDays(1)
                     },
                     new CardProAuthentication()
                 }
