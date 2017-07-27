@@ -54,23 +54,23 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="ServiceStack, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\st-custom\ServiceStack.dll</HintPath>
+      <HintPath>..\..\..\sacombankePayV2\branches\ServiceStack\bin\Debug\ServiceStack.dll</HintPath>
     </Reference>
     <Reference Include="ServiceStack.Client, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\st-custom\ServiceStack.Client.dll</HintPath>
+      <HintPath>..\..\..\sacombankePayV2\branches\ServiceStack\bin\Debug\ServiceStack.Client.dll</HintPath>
     </Reference>
     <Reference Include="ServiceStack.Common, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\st-custom\ServiceStack.Common.dll</HintPath>
+      <HintPath>..\..\..\sacombankePayV2\branches\ServiceStack\bin\Debug\ServiceStack.Common.dll</HintPath>
     </Reference>
     <Reference Include="ServiceStack.Interfaces, Version=4.0.0.0, Culture=neutral, PublicKeyToken=e06fbc6124f57c43, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\st-custom\ServiceStack.Interfaces.dll</HintPath>
+      <HintPath>..\..\..\sacombankePayV2\branches\ServiceStack\bin\Debug\ServiceStack.Interfaces.dll</HintPath>
     </Reference>
     <Reference Include="ServiceStack.Text, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\st-custom\ServiceStack.Text.dll</HintPath>
+      <HintPath>..\..\..\sacombankePayV2\branches\ServiceStack\bin\Debug\ServiceStack.Text.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -229,9 +229,11 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="CardProAuthentication.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="DTOs\CardRegister.cs" />
     <Compile Include="DTOs\HandShakeToken.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -244,7 +246,6 @@
     <Compile Include="Results\ChallengeResult.cs" />
     <Compile Include="Services\CardProService.cs" />
     <Compile Include="Startup.cs" />
-    <Compile Include="Utils\AesUtils.cs" />
     <Compile Include="Utils\FilterUtils.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -254,12 +255,6 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Libraries\log4net.dll" />
-    <Content Include="Libraries\ServiceStack.Client.dll" />
-    <Content Include="Libraries\ServiceStack.Common.dll" />
-    <Content Include="Libraries\ServiceStack.dll" />
-    <Content Include="Libraries\ServiceStack.Interfaces.dll" />
-    <Content Include="Libraries\ServiceStack.Text.dll" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Areas\HelpPage\Views\Web.config" />

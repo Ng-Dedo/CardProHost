@@ -23,11 +23,12 @@ namespace CardProHost {
             Plugins.Add(new AuthFeature(() => new AuthUserSession(),
                 new IAuthProvider[] {
                     new JwtAuthProvider(AppSettings) {
-                        AuthKey = AesUtils.CreateKey(),
+                        PrivateKey = RsaUtils.CreatePrivateKeyParams(RsaKeyLengths.Bit2048),
                         RequireSecureConnection = false, //TODO: remove in production
                         CreatePayloadFilter = FilterUtils.JWTPayloadFilter,
                         EncryptPayload = true
-                    }
+                    },
+                    new CardProAuthentication()
                 }
             ));
         }
