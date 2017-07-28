@@ -241,7 +241,7 @@
     <Compile Include="DTOs\CardAuthentication.cs" />
     <Compile Include="DTOs\Card.cs" />
     <Compile Include="DTOs\CardRegister.cs" />
-    <Compile Include="DTOs\HandShakeToken.cs" />
+    <Compile Include="DTOs\HandShake.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

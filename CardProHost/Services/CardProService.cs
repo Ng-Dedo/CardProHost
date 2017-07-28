@@ -4,14 +4,13 @@ using System.Net;
 
 namespace CardProHost.Services {
     public class CardProService : Service {
-        public object Any(HandShakeToken handshake) {
-            return new { token = handshake?.Token  };
+        public object Post(HandShake handshake) {
+            return new { token = handshake?.Key  };
         }   
 
         public object Post(CardRegister cardRegister) {
             return new HttpResult(HttpStatusCode.OK, "Successfully");
         }
-
 
         #region reference services
 
