@@ -1,6 +1,6 @@
 ﻿using CardProHost.DTOs;
 using ServiceStack;
-using ServiceStack.Auth;
+using System.Net;
 
 namespace CardProHost.Services {
     public class CardProService : Service {
@@ -8,11 +8,16 @@ namespace CardProHost.Services {
             return new { token = handshake?.Token  };
         }   
 
-        [Authenticate]
-        [RequiredPermission("CanRegister")]
         public object Post(CardRegister cardRegister) {
-            IAuthSession session = GetSession();
-            return new { result = $"{session?.FirstName} - {cardRegister.Type}" };
+            return new HttpResult(HttpStatusCode.OK, "Successfully");
         }
+
+        [Route("/cards", "GET")]
+        [Authenticate]
+        [RequiredPermission("canGetCards")]
+        public object Cards(DTOWrapper<Card> dto) {
+            return MockService.GetCards(dto);
+        }
+
     }
 }
