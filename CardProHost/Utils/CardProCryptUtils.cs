@@ -9,7 +9,7 @@ namespace CardProHost.Utils {
         private static readonly ILog logger = LogManager.GetLogger(typeof(CardProCryptUtils));
         private static readonly IAppSettings appSettings = new AppSettings();
 
-        public static string Encrypt(this string content, string key) {
+        public static string CardProEncrypt(this string content, string key) {
             var encryptedContent = string.Empty;
             try {
                 var iv = AesUtils.CreateIv();
@@ -21,7 +21,7 @@ namespace CardProHost.Utils {
             return encryptedContent;
         }
 
-        public static string Decrypt(this string encryptedContent, string privateKey = null) {
+        public static string CardProDecrypt(this string encryptedContent, string privateKey = null) {
             var content = string.Empty;
             try {
                 var iv = AesUtils.CreateIv();
