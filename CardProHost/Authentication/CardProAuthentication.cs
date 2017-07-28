@@ -18,8 +18,8 @@ namespace CardProHost {
             Dictionary<string, string> authInfo) {
 
             session.Id = null;
-            if (session.UserAuthName.Contains("CanRegister")) {
-                session.Permissions = new List<string> { "CanRegister" };
+            if (session.UserAuthName.Contains("VIP")) {
+                session.Permissions = new List<string> { "canGetCards" };
             }
 
             return base.OnAuthenticated(authService, session, tokens, authInfo);

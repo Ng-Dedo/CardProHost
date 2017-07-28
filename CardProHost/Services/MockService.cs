@@ -7,6 +7,9 @@ namespace CardProHost.Services {
 
     public static class MockService {
         private static List<Card> cards;
+        private static IEnumerable<Province> provinces;
+        private static IEnumerable<Income> incomes;
+        private static IEnumerable<Gender> genders;
 
         static MockService (){
             cards = new List<Card>();
@@ -17,6 +20,37 @@ namespace CardProHost.Services {
                     Type = i % 2 == 0 ? CardType.Credit : CardType.Debit
                 });
             }
+
+            provinces = new List<Province> {
+                new Province {
+                    Id = 1,
+                    Name = "Ho Chi Minh"
+                },
+                new Province {
+                    Id = 2,
+                    Name = "Ha Noi"
+                }
+            };
+            incomes = new List<Income> {
+                new Income {
+                    Id = 1,
+                    Name = "7-12 trieu"
+                },
+                new Income {
+                    Id = 2,
+                    Name = "12-18 trieu"
+                }
+            };
+            genders = new List<Gender> {
+                new Gender {
+                    Id = 1,
+                    Name = "Nam"
+                },
+                new Gender {
+                    Id = 2,
+                    Name = "Nu"
+                }
+            };
         }
 
         public static DTOWrapper<Card> GetCards(DTOWrapper<Card> dto) {
@@ -30,6 +64,18 @@ namespace CardProHost.Services {
                 NumberOfResults = dto.NumberOfResults,
                 Results = cards
             };
+        }
+
+        public static IEnumerable<Province> GetProvinces(){
+            return provinces;
+        }
+
+        public static IEnumerable<Province> GetIncomes() {
+            return provinces;
+        }
+
+        public static IEnumerable<Gender> GetGenders() {
+            return genders;
         }
 
     }
