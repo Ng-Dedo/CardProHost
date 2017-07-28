@@ -255,6 +255,7 @@
     <Compile Include="Services\CardProService.cs" />
     <Compile Include="Services\MockService.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="Utils\CardProCryptUtils.cs" />
     <Compile Include="Utils\FilterUtils.cs" />
   </ItemGroup>
   <ItemGroup>

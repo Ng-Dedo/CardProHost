@@ -8,7 +8,7 @@ using System;
 
 namespace CardProHost {
     public class AppHost : AppHostBase {
-        private readonly ILog _log = LogManager.GetLogger(typeof(AppHost));
+        private readonly ILog logger = LogManager.GetLogger(typeof(AppHost));
 
         public AppHost()
            : base("CardProHost", typeof(CardProService).Assembly) {
