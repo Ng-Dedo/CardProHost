@@ -5,6 +5,7 @@ using log4net;
 using ServiceStack.Auth;
 using CardProHost.Utils;
 using System;
+using CardProHost.DTOs;
 
 namespace CardProHost {
     public class AppHost : AppHostBase {
@@ -33,6 +34,9 @@ namespace CardProHost {
                     new CardProAuthentication()
                 }
             ));
+
+            // TODO: remove in production
+            Plugins.Add(new CorsFeature(allowCredentials: true, allowedHeaders : "Content-Type, Authorization"));
         }
     }
 }
