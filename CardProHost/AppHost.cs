@@ -6,17 +6,23 @@ using ServiceStack.Auth;
 using CardProHost.Utils;
 using System;
 using CardProHost.DTOs;
+using ServiceStack.Authentication.OAuth2;
 
-namespace CardProHost {
-    public class AppHost : AppHostBase {
+namespace CardProHost
+{
+    public class AppHost : AppHostBase
+    {
         private readonly ILog logger = LogManager.GetLogger(typeof(AppHost));
 
         public AppHost()
-           : base("CardProHost", typeof(CardProService).Assembly) {
+           : base("CardProHost", typeof(CardProService).Assembly)
+        {
         }
 
-        public override void Configure(Container container) {
-            SetConfig(new HostConfig {
+        public override void Configure(Container container)
+        {
+            SetConfig(new HostConfig
+            {
                 DebugMode = true,
                 HandlerFactoryPath = "api",
                 WebHostUrl = AppSettings.GetString("HostAddress")
@@ -31,12 +37,16 @@ namespace CardProHost {
                         EncryptPayload = true,
                         ExpireTokensIn = TimeSpan.FromDays(1)
                     },
-                    new CardProAuthentication()
+                    new CardProAuthentication(),
+                    new GoogleOAuth2Provider(AppSettings) {
+                        ConsumerKey = "916226986619-3l67d53pvpu0rrk9c80ea5t8rspg0mfe.apps.googleusercontent.com",
+                        ConsumerSecret = "RJUfHrABtTabUM9bZfpnVd6C",
+                    },
                 }
             ));
 
             // TODO: remove in production
-            Plugins.Add(new CorsFeature(allowCredentials: true, allowedHeaders : "Content-Type, Authorization"));
+            Plugins.Add(new CorsFeature(allowCredentials: true, allowedHeaders: "Content-Type, Authorization"));
         }
     }
 }
