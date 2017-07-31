@@ -7,8 +7,9 @@ namespace CardProHost.RequestFilters {
     public class DecryptFilterAttribute : RequestFilterAttribute {
         public override void Execute(IRequest req, IResponse res, object requestDto) {
             if (requestDto is DTOSecret) {
-                // TODO: Get private key from session
-                ((DTOSecret) requestDto).Data.CardProDecrypt();
+                var userSession = req.SessionAs<AuthUserSession>();
+                ((DTOSecret)requestDto).Data = ((DTOSecret) requestDto).Data
+                    .AESCardProDecrypt(userSession?.ClientSessionKey);
             }
         }
            

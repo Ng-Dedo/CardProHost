@@ -2,7 +2,7 @@
 
 namespace CardProHost.DTOs {
     [Route("/card/register")]
-    public class CardRegister {
+    public class CardRegister : DTOSecret {
         public string Name { get; set; }
 
         public Gender Gender { get; set; }
