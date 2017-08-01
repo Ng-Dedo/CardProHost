@@ -1,6 +1,8 @@
-﻿using ServiceStack;
+﻿using CardProHost.RequestFilters;
+using ServiceStack;
 
 namespace CardProHost.DTOs {
+    [DecryptFilter]
     [Route("/card/register")]
     public class CardRegister : DTOSecret {
         public string Name { get; set; }

@@ -8,9 +8,9 @@ namespace CardProHost.Services {
         public object Post(HandShake handshake) {
             var userSession = SessionAs<AuthUserSession>();
             userSession.ClientSessionKey = handshake?.Key.RSACardProDecrypt();
-            Request.SaveSession(userSession);
-            var challenge = userSession.ClientSessionKey.AESCardProEncrypt(userSession.ClientSessionKey);
-            return new HandShake { Key = handshake?.Key, Challenge = challenge  };
+            this.SaveSession(userSession);
+            var challenge = userSession?.ClientSessionKey.AESCardProEncrypt(userSession?.ClientSessionKey);
+            return new HandShake { Key = userSession?.Id, Challenge = challenge  };
         }   
     }
 }

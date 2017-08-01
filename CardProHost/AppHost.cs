@@ -46,7 +46,7 @@ namespace CardProHost
             ));
 
             // TODO: remove in production
-            Plugins.Add(new CorsFeature(allowCredentials: true, allowedHeaders: "Content-Type, Authorization"));
+            Plugins.Add(new CorsFeature(allowCredentials: true, allowedHeaders: "Content-Type, Authorization, X-ss-id"));
         }
     }
 }
