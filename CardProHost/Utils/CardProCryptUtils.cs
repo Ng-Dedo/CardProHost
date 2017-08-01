@@ -98,7 +98,7 @@ namespace CardProHost.Utils
             using (MD5 md5 = MD5.Create())
             {
                 key = new byte[24];
-                iv = new byte[8];
+                iv = new byte[16];
 
                 byte[] block = new byte[16];
                 byte[] buffer = new byte[32];
